@@ -13,7 +13,7 @@ library(rddensity)
 #========================= Preparation of the analyses =========================
 
 # Load data file
-path_data <- "/Users/monabnis/Desktop/Polytechnique/Polytechnique M2/Policy-in-action/Data/francetransfert-1325119685"
+path_data <- "francetransfert-1325119685"
 
 file <- file.path(path_data, "PiA_panel_clean_coef.parquet")
 panel_data <- read_parquet(file)
