@@ -1,6 +1,9 @@
 # Policy-in-Action-2023-CAP-reform
 
-This project analyzes the impact of the 2023 Common Agricultural Policy (CAP) reform on French farms. 
+This project analyzes the impact of the 2023 Common Agricultural Policy (CAP) reform on French farms.
+
+## Data 
+We use data provided by the 
 
 ## Methodology
 We employ causal inference methods to estimate the effect of losing CAP eligibility on gross standard output. Namely Difference-in-Differences, ... 
