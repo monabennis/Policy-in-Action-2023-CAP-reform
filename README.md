@@ -27,21 +27,21 @@ The complete case sample (farms with COEF2023 values) covers 48,003 farms and 21
 - The treatment effect is **heterogeneous across regions**, with Centre-Val de Loire most severely affected
 
 ## Repository structure
-
+```
 Policy-in-Action-2023-CAP-reform/
 │
 ├── PiA_data.parquet                        ← cross-sectional data (not in repo)
 ├── PiA_panel_data.parquet                  ← panel data (not in repo)
 │
 ├── Regional Analysis/
-│   └── Regional_Maps.R                    
+│   └── Regional_Maps.R                     
 │
 ├── Clustering/
-│   └── K_Modes.R                           
+│   └── K_Modes.R                          
 │
 ├── Logit and RDD/
 │   ├── PiA_Logit_and_RDD.R                
-│   └── Validation and Balance Checks.R    
+│   └── Validation and Balance Checks.R     
 │
 ├── Difference-in-Differences/
 │   ├── DiD.R                               
@@ -51,18 +51,16 @@ Policy-in-Action-2023-CAP-reform/
 │   └── PiA_Diff_in_Disc.R                  
 │
 ├── Double Machine Learning/
-│   └── PiA_Double_ML.R                     
+│   └── PiA_Double_ML.R                    
 │
 └── Presentation/
     └── Policy_in_Action_Presentation.pdf
-
+```
 ## How to run
 Each script is standalone — run them independently in any order, as long as the data files are in the root directory. Open the relevant .R file in RStudio and click Source, or run from the terminal with Rscript filename.R.   
 
-For software requirements and data access, see REQUIREMENTS.md.
-For methodological details, see METHODS.md.
+For software requirements and data access, see Requirements.md.
+For methodological details, see Methods.md.
 
 ## Authors 
 Mona Bennis, Célina Madaschi, Alice Zanni 
-
-
