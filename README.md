@@ -29,21 +29,17 @@ We employ five causal inference strategies on the same policy shock for robustne
   - `Regional_Maps.R`: Summary statistics of farms at the regional level, including the point maps depicting the share of active farms by CAP status in 2020 and 2023.
 - `Clustering/`
   - `K_Modes.R`: Clustering method to create profiles for farms that have lost CAP eligibility, with corresponding elbow plot to visualize the optimal number of clusters.
-- `Logistic_Model/`
-  - `Logit_AME.R`: Logistic regression estimating the impact of CAP eligibility loss on the probability of farm exit, with average marginal effects computed across multiple model specifications.
 - `Difference-in-Differences/`
   - `DiD.R`: Main script implementing DiD estimations across multiple model specifications, including the generation of confidence interval plots.
   - `Regional_DiD.R`: Extension of the analysis at the regional level, with corresponding confidence interval visualizations.
-- `RDD/`
-  - `RDD_Fuzzy.R`: Fuzzy RDD using the age-67 cutoff as an instrument, with MSE-optimal bandwidth selection, estimating the effect of eligibility loss on farm exit and gross standard output.
+- `Logit and RDD/`
+  - `PiA_Logit_and_RDD.R`: Logistic regression estimating the impact of CAP eligibility loss on the probability of farm exit, with average marginal effects computed across multiple model specifications. Fuzzy RDD using the age-67 cutoff as an instrument, with MSE-optimal bandwidth selection, estimating the effect of eligibility loss on farm exit and gross standard output. Also, plots to compare the estimates for different samples, and plots for estimates by region.
   - `McCrary_Test.R`: Density test for the running variable (age) around the cutoff to assess the no-manipulation assumption.
   - `Covariate_Balance.R`: Balancing tests and bandwidth sensitivity analysis to assess the credibility of the RDD design.
-- `Difference_in_Discontinuities/`
-  - `DiDisc_Fuzzy.R`: Fuzzy Difference-in-Discontinuities combining RDD and DiD variation to difference out pre-existing discontinuities at the age cutoff, with confidence interval plots across model specifications.
-- `DML/`
-  - `DML_IRM.R`: Double/Debiased Machine Learning using the Interactive Regression Model to estimate the Average Treatment Effect (ATE) of eligibility loss on exit and gross standard output, with Random Forest learners and 5-fold cross-fitting.
-  - `DML_PLIV.R`: DML Partially Linear IV model using OVER_67 as an instrument to estimate the Local Average Treatment Effect (LATE), with Anderson-Rubin weak-IV robust confidence sets.
-  - `Regional_DML.R`: Regional heterogeneity analysis using both DML-IRM and DML-PLIV, with corresponding confidence interval visualizations.
+- `Difference-in-Discontinuities/`
+  - `PiA_Diff_in_Disc.R`: Fuzzy Difference-in-Discontinuities (using gross standard output as the dependent variable) combining RDD and DiD variation to difference out pre-existing discontinuities at the age cutoff, with confidence interval plots across model specifications. Also, plots to compare the estimates for different samples, and plots for estimates by region.
+- `Double Machine Learning/`
+  - `PiA_Double_ML.R`: Double/Debiased Machine Learning using the Interactive Regression Model to estimate the Average Treatment Effect (ATE) of eligibility loss on exit and gross standard output, with Random Forest learners and 5-fold cross-fitting. DML Partially Linear IV model using OVER_67 as an instrument to estimate the Local Average Treatment Effect (LATE), with Anderson-Rubin weak-IV robust confidence sets. Plots were also created to compare estimates with both methods and for different samples, and to compare regional estimates with both methods. At the end of the file, an Anderson-Rubin weak IV test is implemented and the C-statistic is visualized in a graph (with different possible values for the true value of the parameter on the x-axis, and the value of the C-statistic on the y-axis) in order to confirm instrument strength.
 
 ## Key Findings
 
