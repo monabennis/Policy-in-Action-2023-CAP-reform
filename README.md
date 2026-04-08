@@ -1,6 +1,6 @@
 # Policy-in-Action-2023-CAP-reform
 
-This project analyzes the causal impact of the 2023 Common Agricultural Policy (CAP) reform on French farm demographics, specifically examining how the new "active farmer" eligibility criterion affected farm exit rates and gross standard output.
+This project analyses the causal impact of the 2023 Common Agricultural Policy (CAP) reform on French farm demographics, specifically examining how the new "active farmer" eligibility criterion affected farm exit rates and gross standard output.
 
 ## Research Question
 
