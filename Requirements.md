@@ -16,19 +16,19 @@ Install the required R packages by running this once in your R console:
 
 ```r
 install.packages(c(
-  "tidyverse",        # data manipulation and ggplot2 visualisation
-  "arrow",            # reading .parquet files
-  "rdrobust",         # RDD estimation
-  "rddensity",        # density test for RDD
-  "DoubleML",         # Double Machine Learning
-  "mlr3",             # ML backend for DoubleML
+  "tidyverse",        
+  "arrow",           
+  "rdrobust",        
+  "rddensity",        
+  "DoubleML",         
+  "mlr3",             
   "mlr3learners",
-  "ranger",           # Random Forest learner
-  "fixest",           # fast DiD / fixed effects regressions
-  "marginaleffects",  # average marginal effects for logit
-  "kmodR",            # K-Modes clustering
-  "sf",               # spatial data (maps)
-  "tmap"              # map visualisation
+  "ranger",           
+  "fixest",          
+  "marginaleffects",  
+  "kmodR",           
+  "sf",               
+  "tmap"             
 ))
 ```
 
@@ -41,14 +41,19 @@ Download from [python.org/downloads](https://www.python.org/downloads)
 Used for descriptive statistics. Install the required packages with:
 
 ```bash
-pip install pandas pyarrow
+pip install pandas
+pip install numpy
+pip install geopandas
+pip install matplotlib
+pip install pyarrow
+pip install json
 ```
 
 ---
 
 ## Viewing the HTML output
 
-The descriptive statistics script produces an **HTML file** that must be **downloaded and opened locally in your browser**. GitHub does not render HTML files — it shows raw source instead. To view it correctly: download the file, then open it by double-clicking or dragging it into a browser window.
+The descriptive statistics script produces an **HTML file** that must be **downloaded and opened locally in your browser**. GitHub does not render HTML files. To view it correctly, one must download the file then open it by double-clicking or dragging it into a browser window.
 
 ---
 
