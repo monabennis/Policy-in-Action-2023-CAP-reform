@@ -1,1 +1,0 @@
-Complete_case_cap_map.html`: Interactive department-level map — [▶ view interactive version](https://htmlpreview.github.io/?https://github.com/monabennis/Policy-in-Action-2023-CAP-reform/blob/main/Interactive%20Descriptive%20Statistics/Complete_case_cap_map.html)
