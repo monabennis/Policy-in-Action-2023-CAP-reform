@@ -10,7 +10,7 @@ This project requires both **R** and **Python**.
 
 Download from [cran.r-project.org](https://cran.r-project.org)
 
-RStudio is optional but strongly recommended — download from [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop)
+RStudio is optional but strongly recommended. [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop)
 
 Install the required R packages by running this once in your R console:
 
