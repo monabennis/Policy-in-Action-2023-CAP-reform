@@ -2,6 +2,9 @@
 
 This project analyses the causal impact of the 2023 Common Agricultural Policy (CAP) reform on French farm demographics, specifically examining how the new "active farmer" eligibility criterion affected farm exit rates and gross standard output.
 
+### Presentation
+📄 [Download Presentation](https://raw.githubusercontent.com/monabennis/Policy-in-Action-2023-CAP-reform/main/Presentation/Policy_in_Action_Presentation.pdf)
+
 ## Research Question
 
 How did the 2023 CAP eligibility reform impact farm exit and gross standard output? Is the effect heterogeneous across regions?
@@ -15,31 +18,6 @@ We use administrative census data provided by the Ministry of Agriculture (Agres
 
 The complete case sample (farms with COEF2023 values) covers 48,003 farms and 21 variables including farm size, output, livestock, legal status, farming type, and geographic controls.
 
-## Methodology
-We employ five causal inference strategies on the same policy shock for robustness:
-
-1. **Logistic Model** — Baseline prediction of exit probability using average marginal effects under the Conditional Independence Assumption.
-2. **Difference-in-Differences (DiD)** — Two-period panel comparing treated vs. control farms on standardised gross output.
-3. **Fuzzy Regression Discontinuity Design (RDD)** — Uses the age-67 cutoff as an instrument in a 2SLS framework.
-4. **Difference-in-Discontinuities (Fuzzy)** — Combines DiD and RDD to difference out pre-existing discontinuities at the age cutoff, addressing covariate imbalance
-5. **Double/Debiased Machine Learning (DML)** — IRM (ATE) and PLIV (LATE) using Random Forest nuisance learners with 5-fold cross-fitting. Anderson–Rubin weak-IV test confirms instrument strength.
-
-## Project Structure
-- `Regional Analysis/`
-  - `Regional_Maps.R`: Summary statistics of farms at the regional level, including the point maps depicting the share of active farms by CAP status in 2020 and 2023.
-- `Clustering/`
-  - `K_Modes.R`: Clustering method to create profiles for farms that have lost CAP eligibility, with corresponding elbow plot to visualize the optimal number of clusters.
-- `Difference-in-Differences/`
-  - `DiD.R`: Main script implementing DiD estimations across multiple model specifications, including the generation of confidence interval plots.
-  - `Regional_DiD.R`: Extension of the analysis at the regional level, with corresponding confidence interval visualizations.
-- `Logit and RDD/`
-  - `PiA_Logit_and_RDD.R`: Logistic regression estimating the impact of CAP eligibility loss on the probability of farm exit, with average marginal effects computed across multiple model specifications. Fuzzy RDD using the age-67 cutoff as an instrument, with MSE-optimal bandwidth selection, estimating the effect of eligibility loss on farm exit and gross standard output. Also, plots to compare the estimates for different samples, and plots for estimates by region.
-  - `Validation and Balance Checkst.R`: Density test for the running variable (age) around the cutoff to assess the no-manipulation assumption. This is followed by balancing tests and bandwidth sensitivity analysis to assess the credibility of the RDD design.
-- `Difference-in-Discontinuities/`
-  - `PiA_Diff_in_Disc.R`: Fuzzy Difference-in-Discontinuities (using gross standard output as the dependent variable) combining RDD and DiD variation to difference out pre-existing discontinuities at the age cutoff, with confidence interval plots across model specifications. Also, plots to compare the estimates for different samples, and plots for estimates by region.
-- `Double Machine Learning/`
-  - `PiA_Double_ML.R`: Double/Debiased Machine Learning using the Interactive Regression Model to estimate the Average Treatment Effect (ATE) of eligibility loss on exit and gross standard output, with Random Forest learners and 5-fold cross-fitting. DML Partially Linear IV model using OVER_67 as an instrument to estimate the Local Average Treatment Effect (LATE), with Anderson-Rubin weak-IV robust confidence sets. Plots were also created to compare estimates with both methods and for different samples, and to compare regional estimates with both methods. At the end of the file, an Anderson-Rubin weak IV test is implemented and the C-statistic is visualized in a graph (with different possible values for the true value of the parameter on the x-axis, and the value of the C-statistic on the y-axis) in order to confirm instrument strength.
-
 ## Key Findings
 
 - Losing CAP eligibility increases farm exit probability by **+26 to +34 percentage points** across all identification strategies
@@ -48,9 +26,43 @@ We employ five causal inference strategies on the same policy shock for robustne
 - The effect on gross standard output is directionally negative (DiD estimate: −226k€) but causally uncertain in some specifications
 - The treatment effect is **heterogeneous across regions**, with Centre-Val de Loire most severely affected
 
+## Repository structure
+
+Policy-in-Action-2023-CAP-reform/
+│
+├── PiA_data.parquet                        ← cross-sectional data (not in repo)
+├── PiA_panel_data.parquet                  ← panel data (not in repo)
+│
+├── Regional Analysis/
+│   └── Regional_Maps.R                    
+│
+├── Clustering/
+│   └── K_Modes.R                           
+│
+├── Logit and RDD/
+│   ├── PiA_Logit_and_RDD.R                
+│   └── Validation and Balance Checks.R    
+│
+├── Difference-in-Differences/
+│   ├── DiD.R                               
+│   └── Regional_DiD.R                     
+│
+├── Difference-in-Discontinuities/
+│   └── PiA_Diff_in_Disc.R                  
+│
+├── Double Machine Learning/
+│   └── PiA_Double_ML.R                     
+│
+└── Presentation/
+    └── Policy_in_Action_Presentation.pdf
+
+## How to run
+Each script is standalone — run them independently in any order, as long as the data files are in the root directory. Open the relevant .R file in RStudio and click Source, or run from the terminal with Rscript filename.R.   
+
+For software requirements and data access, see REQUIREMENTS.md.
+For methodological details, see METHODS.md.
+
 ## Authors 
 Mona Bennis, Célina Madaschi, Alice Zanni 
 
-## Presentation
-📄 [Download Presentation](https://raw.githubusercontent.com/monabennis/Policy-in-Action-2023-CAP-reform/main/Presentation/Policy_in_Action_Presentation.pdf)
 
