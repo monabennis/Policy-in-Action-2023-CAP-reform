@@ -55,3 +55,7 @@ We employ five causal inference strategies on the same policy shock for robustne
 
 ## Authors 
 Mona Bennis, Célina Madaschi, Alice Zanni 
+
+## Presentation
+📄 [Download Presentation](https://raw.githubusercontent.com/monabennis/Policy-in-Action-2023-CAP-reform/main/Presentation/Policy_in_Action_Presentation.pdf)
+
