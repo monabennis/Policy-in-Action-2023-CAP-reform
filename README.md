@@ -52,3 +52,6 @@ We employ five causal inference strategies on the same policy shock for robustne
 - **Micro farms** and **elderly operators (67+)** are the most affected groups
 - The effect on gross standard output is directionally negative (DiD estimate: −226k€) but causally uncertain in some specifications
 - The treatment effect is **heterogeneous across regions**, with Centre-Val de Loire most severely affected
+
+## Authors 
+Mona Bennis, Célina Madaschi, Alice Zanni 
