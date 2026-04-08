@@ -34,8 +34,7 @@ We employ five causal inference strategies on the same policy shock for robustne
   - `Regional_DiD.R`: Extension of the analysis at the regional level, with corresponding confidence interval visualizations.
 - `Logit and RDD/`
   - `PiA_Logit_and_RDD.R`: Logistic regression estimating the impact of CAP eligibility loss on the probability of farm exit, with average marginal effects computed across multiple model specifications. Fuzzy RDD using the age-67 cutoff as an instrument, with MSE-optimal bandwidth selection, estimating the effect of eligibility loss on farm exit and gross standard output. Also, plots to compare the estimates for different samples, and plots for estimates by region.
-  - `McCrary_Test.R`: Density test for the running variable (age) around the cutoff to assess the no-manipulation assumption.
-  - `Covariate_Balance.R`: Balancing tests and bandwidth sensitivity analysis to assess the credibility of the RDD design.
+  - `Validation and Balance Checkst.R`: Density test for the running variable (age) around the cutoff to assess the no-manipulation assumption. This is followed by balancing tests and bandwidth sensitivity analysis to assess the credibility of the RDD design.
 - `Difference-in-Discontinuities/`
   - `PiA_Diff_in_Disc.R`: Fuzzy Difference-in-Discontinuities (using gross standard output as the dependent variable) combining RDD and DiD variation to difference out pre-existing discontinuities at the age cutoff, with confidence interval plots across model specifications. Also, plots to compare the estimates for different samples, and plots for estimates by region.
 - `Double Machine Learning/`
